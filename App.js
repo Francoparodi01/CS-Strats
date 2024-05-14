@@ -1,11 +1,12 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import Constants from "expo-constants"
-import Main from "./src/components/Main.jsx"
+import MapList from './src/components/MapList.jsx';
 
 export default function App() {
   return (
     <View style={{ marginTop: Constants.statusBarHeight, flewGrow: 1}}>
-      <Main/>
+      <Text>CS2 STRATS</Text>
+      <MapList/>
     </View>
   )
 }

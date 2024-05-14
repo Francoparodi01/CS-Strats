@@ -1,13 +1,16 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, FlatList } from "react-native";
+import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import mapasData from "../../data/mapas";
 
 const MapList = () => {
+
   const renderMapaItem = ({ item: mapa }) => (
-    <View style={styles.mapaItem}>
-      <Text>{mapa.nombre}</Text>
-      <Image source={mapa.img} style={styles.mapImage} />
-    </View>
+    <TouchableOpacity onPress={() => navigation.navigate('MapaDinamico', { mapa })}>
+      <View style={styles.mapaItem}>
+        <Text>{mapa.nombre}</Text>
+        <Image source={mapa.img} style={styles.mapImage} />
+      </View>
+    </TouchableOpacity>
   );
 
   const renderSeparator = () => (
