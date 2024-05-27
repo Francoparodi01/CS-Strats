@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Linking, Alert } from "react-native";
 import mapas from "../../../data/mapas"; // Importación de los datos de los mapas
 
@@ -30,11 +31,26 @@ const MapaDinamico = ({ route }) => {
       <Text style={styles.smokeTitle}>{item.title}</Text>
       {/* Al presionar en el URL, se llama a la función openURL con la URL como parámetro */}
       <TouchableOpacity onPress={() => openURL(item.url)}>
+=======
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Linking } from "react-native";
+
+const MapaDinamico = ({ route }) => {
+  const { mapa } = route.params;
+
+  // Debugging to check the received data
+  console.log('Received mapa:', mapa);
+
+  const renderSmokeItem = ({ item }) => (
+    <View style={styles.smokeItem}>
+      <Text style={styles.smokeTitle}>{item.title}</Text>
+      <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
         <Text style={styles.smokeUrl}>{item.url}</Text>
       </TouchableOpacity>
     </View>
   );
 
+<<<<<<< HEAD
   // Devolución del componente de la pantalla del mapa dinámico
   return (
     <View style={styles.container}>
@@ -45,11 +61,20 @@ const MapaDinamico = ({ route }) => {
       <Text style={styles.sideTitle}>CT Side Smokes</Text>
       {/* Se renderiza la lista de humos del lado CT si existen */}
       {mapa.lado && mapa.lado.ct && mapa.lado.ct.length > 0 && (
+=======
+  return (
+    <View style={styles.container}>
+      <Text style={styles.mapName}>{mapa.nombre}</Text>
+      
+      <Text style={styles.sideTitle}>CT Side Smokes</Text>
+      {mapa.lado && mapa.lado.ct && mapa.lado.ct.length > 0 ? (
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
         <FlatList
           data={mapa.lado.ct}
           renderItem={renderSmokeItem}
           keyExtractor={item => item.id.toString()}
         />
+<<<<<<< HEAD
       )}
       {/* Se muestra un mensaje si no hay humos del lado CT */}
       {!mapa.lado || !mapa.lado.ct || mapa.lado.ct.length === 0 && (
@@ -60,21 +85,36 @@ const MapaDinamico = ({ route }) => {
       <Text style={styles.sideTitle}>TT Side Smokes</Text>
       {/* Se renderiza la lista de humos del lado TT si existen */}
       {mapa.lado && mapa.lado.tt && mapa.lado.tt.length > 0 && (
+=======
+      ) : (
+        <Text style={styles.noDataText}>No CT smokes available.</Text>
+      )}
+
+      <Text style={styles.sideTitle}>TT Side Smokes</Text>
+      {mapa.lado && mapa.lado.tt && mapa.lado.tt.length > 0 ? (
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
         <FlatList
           data={mapa.lado.tt}
           renderItem={renderSmokeItem}
           keyExtractor={item => item.id.toString()}
         />
+<<<<<<< HEAD
       )}
       {/* Se muestra un mensaje si no hay humos del lado TT */}
       {!mapa.lado || !mapa.lado.tt || mapa.lado.tt.length === 0 && (
+=======
+      ) : (
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
         <Text style={styles.noDataText}>No TT smokes available.</Text>
       )}
     </View>
   );
 };
 
+<<<<<<< HEAD
 // Estilos para el componente
+=======
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -106,7 +146,11 @@ const styles = StyleSheet.create({
   },
   smokeUrl: {
     fontSize: 14,
+<<<<<<< HEAD
     color: '#1E90FF',
+=======
+    color: '#1E90FF', // Change to a link color
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
     textDecorationLine: 'underline'
   },
   noDataText: {
@@ -116,5 +160,8 @@ const styles = StyleSheet.create({
     marginVertical: 5
   }
 });
+<<<<<<< HEAD
 
 export default MapaDinamico;
+=======
+>>>>>>> f0002c5c67525455485f8bc9c54b78b99e30355d
