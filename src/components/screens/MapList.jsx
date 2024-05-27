@@ -4,7 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import mapasData from "../../../data/mapas";
 
 const MapList = () => {
+<<<<<<< HEAD
   const navigation = useNavigation(); 
+=======
+  const navigation = useNavigation(); // Obtiene el objeto de navegación
+>>>>>>> 45d034c1ac58ea47de495e1f47e38de1cf5f88fd
 
   const renderMapaItem = ({ item: mapa }) => (
     <TouchableOpacity onPress={() => navigation.navigate('MapaDinamico', { mapa })}>
@@ -29,11 +33,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     backgroundColor: 'black',
+<<<<<<< HEAD
     borderRadius: 10,
+=======
+    borderRadius: 10, // Bordes redondeados
+>>>>>>> 45d034c1ac58ea47de495e1f47e38de1cf5f88fd
     flexDirection: 'column',
     margin: 10
   },
   mapImage: {
+<<<<<<< HEAD
     height: 130,
     width: 300,
     borderRadius: 10,
@@ -42,6 +51,16 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 16,
     fontWeight: 'bold',
+=======
+    height: 130, // Altura fija de la imagen
+    width: 300,
+    borderRadius: 10, // Bordes redondeados
+  },
+  data:{
+    padding: 10,
+    fontSize: 16, // Tamaño de fuente del nombre
+    fontWeight: 'bold', // Estilo de fuente en negrita para el nombre
+>>>>>>> 45d034c1ac58ea47de495e1f47e38de1cf5f88fd
     color: 'white'
   }
 });
